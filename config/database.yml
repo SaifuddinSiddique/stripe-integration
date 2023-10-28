@@ -1,0 +1,23 @@
+# config/database.yml
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  username: <%=  'myuser123' %>
+  password: <%=  'mypass123' %>
+
+development:
+  <<: *default
+  database: stripe_integration_development
+
+test:
+  <<: *default
+  database: stripe_integration_test
+
+production:
+  <<: *default
+  database: stripe_integration_production
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
