@@ -10,6 +10,8 @@ module StripeIntegration
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+    config.stripe.publishable_key = 'pk_test_51O6PubSFOMM3gWDssVYAzYIv5IVxFn4EFkiZUyV8GWa0lzKZdbYyYAUlaA151gDOo1VFj0MSDQYNFtKePu0yER9Z00BVAdXb4b'
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
