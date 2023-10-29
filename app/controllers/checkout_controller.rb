@@ -17,6 +17,10 @@ class CheckoutController < ApplicationController
       success_url: root_url,
       cancel_url: root_url,
     })
+    if @session 
+      product.increment(:sales_count)
+      product.save!
+    end
     respond_to do |format|
       format.js 
     end

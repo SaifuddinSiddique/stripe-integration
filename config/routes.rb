@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :products
   resources :checkout, only: [:create]  
   post "checkout/create", to: "checkout#create"
+  resources :webhooks, only: [:create]  
+  post '/webhooks/create', to: 'webhooks#create'
 end

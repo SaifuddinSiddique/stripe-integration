@@ -2,7 +2,6 @@ var stripe = Stripe('pk_test_51O6PubSFOMM3gWDssVYAzYIv5IVxFn4EFkiZUyV8GWa0lzKZdb
 
 stripe.redirectToCheckout({
   sessionId: '<%= @session.id %>'
-<%debugger%>
 }).then (function (result) {
   console.log(result.error.message);
 });
